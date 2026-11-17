@@ -1,0 +1,5 @@
+# Published HTML artifacts must retain their exact bytes and SHA-256.
+*.html -text
+*.pdf binary
+*.png binary
+*.ttf binary

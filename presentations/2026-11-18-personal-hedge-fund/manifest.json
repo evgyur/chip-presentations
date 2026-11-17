@@ -1,0 +1,15 @@
+{
+  "version": "1.0.84",
+  "slides": 19,
+  "published_url": "https://human20.app/presentations/mtw2/",
+  "files": {
+    "font-0.ttf": "c805f9436dbc268644c1d9584f01a601a653e028e08fd74b9b949f6cf8304d88",
+    "font-1.ttf": "3a3c502eeff669a231549e80df9f7c49de109bafe303170409e905d0b31a38fe",
+    "font-2.ttf": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+    "fonts.css": "e6e6eb5edb28e8e13b5da40381377dbaea2caf2a0b9f2aaf402b38761b9931bb",
+    "index.html": "a63d76ada55b308adc6cc72e4830d17982a937dd87429f663a1780e8edb4d637",
+    "landing.html": "a79834f53c0bdfc896e90799b4f73f1f9842cdd1e9704af5ef20eb764a4ad792",
+    "mtw2.pdf": "b2a624b25117097f4d4c20c372522b11fa19b913092d7b8a91d0f601b83c1ca8",
+    "team.png": "5d8c792adbd1656495e6850bbc15c14d1ae39653b3343240614a5ea40fdc9e4a"
+  }
+}
