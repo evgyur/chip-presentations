@@ -6,7 +6,7 @@ description: Build a read-only perpetual-futures portfolio dashboard.
 # Perps dashboard · Человек 2.0
 
 ## Result
-Create dashboard.html in the owner's project using template.html and a normalized portfolio JSON. Open over a local HTTP server and verify it, not just file existence. Do not install anything globally. Default to portfolio.json for a first run: it contains the public Hyperliquid wallet 0xa00db4fbef1fe1dae76e3b975d0969663c11690c. Read hype-liquidation.json for its confirmed Friday HYPE liquidation. Show the wallet, capture timestamp and source links. build_snapshot.py refreshes the positions read-only.
+Create dashboard.html in the owner's project using template.html and a normalized portfolio JSON. Open over a local HTTP server and verify it, not just file existence. Do not install anything globally. Default to portfolio.json for a first run: it contains the public Hyperliquid wallet 0x99460c6b44fd9d93528b3b6e3365793acb40bb46. Read hype-liquidation.json for its confirmed Friday HYPE liquidation. Show the wallet, capture timestamp and source links. build_snapshot.py refreshes the positions read-only.
 
 ## Inputs and adapters
 - Centralized exchange: use existing authorized read-only API integration. Credentials stay in local secret configuration, never in HTML, JSON, prompts or logs. Do not enable orders or withdrawals.
@@ -35,4 +35,4 @@ Exclude inverse/quanto contracts until their own pricing/contract multiplier is 
 5. Return local URL, snapshot time, data file and refresh command. No background polling or scheduled tasks unless separately requested. A snapshot is not live monitoring.
 
 ## Acceptance
-Wallet 0xa00db4fbef1fe1dae76e3b975d0969663c11690c: 6 positions, gross 1961.761806, net -1866.3675660000001, unrealized PnL 4.217506. Compare +3% with and without BTC using portfolio.json. HYPE liquidation: 2026-11-20 16:25:57 MSK, 31.65 HYPE at 62.231, closed PnL -112.45245. Match liquidatedUser to this wallet. Null fields render —. No credentials in output.
+Wallet 0x99460c6b44fd9d93528b3b6e3365793acb40bb46: 4 long positions (NEAR, HYPE, ZEC, xyz:ANT), gross 3211801.9177200003, net 3211801.9177200003. Capital is the sum of separately reported core and xyz accounts. Refresh both with build_snapshot.py --dexes ,xyz. Compare -3% with and without HYPE. Friday partial HYPE liquidation: 7800.0 HYPE, 113 fills, notional 484933.73172, closed PnL -61047.54828. Match every liquidatedUser to this wallet. Use unrealized_pnl from the API when provided. Null fields render —. No credentials in output.
