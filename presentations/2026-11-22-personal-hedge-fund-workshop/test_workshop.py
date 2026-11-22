@@ -54,6 +54,16 @@ class WorkshopTests(unittest.TestCase):
   self.assertIn('id="accounts"',s);self.assertIn('id="exclude"',s)
   self.assertNotIn('64<span>/100',s);self.assertNotIn('ROI за год',s)
   self.assertEqual((D/'materials/perps-dashboard/template.html').read_text(),s)
+ def test_plain_language_copy(self):
+  s=(D/'slides.html').read_text();visible=re.sub(r'srcdoc=".*?"(?=>)','',s,flags=re.S)
+  for phrase in ['ХОЧУ СЕБЕ ТАКОЕ','ВОТ ГДЕ НАЧИНАЕТСЯ АГЕНТ','Не предсказатель','силы убеждения','МАЛЕНЬКИЙ ЗАВЕРШЁННЫЙ ЦИКЛ','Кто-то в X уже всё объяснил','А если убрать SOL','Покажите результат, затем дайте короткое поручение']:
+   self.assertNotIn(phrase,visible)
+  for title in ['Дашборд кошелька Hyperliquid','Собираем дашборд в Codex','Рассчитываем размер позиции','Что останется после мастер-класса']:
+   self.assertIn('<h2>'+title+'</h2>',visible)
+  match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
+  notes=json.loads(match[1])
+  self.assertEqual(len(notes),21);self.assertEqual(len({tuple(n['bullets']) for n in notes}),21)
+  self.assertEqual(3000//((300-294)*10),50);self.assertEqual(3000//((302-294)*10),37)
  def test_skill_archive(self):
   with zipfile.ZipFile(D/'perps-dashboard-skill.zip') as z:
    self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/portfolio.json','perps-dashboard/hype-liquidation.json','perps-dashboard/build_snapshot.py'});self.assertIsNone(z.testzip())
