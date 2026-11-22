@@ -68,6 +68,20 @@ class WorkshopTests(unittest.TestCase):
   s=(D/'slides.html').read_text();rule=re.search(r'\.stat-proof strong\{([^}]+)\}',s);assert rule is not None
   self.assertIn('white-space:nowrap',rule[1]);self.assertIn('font:48px',rule[1])
   self.assertIn('grid-template-columns:repeat(3,minmax(0,1fr))',s)
+ def test_moex_program_order(self):
+  s=(D/'slides.html').read_text();articles=re.findall(r'<article\b.*?</article>',s,re.S)
+  ids=[re.findall(r'id="([^"]+)"',a)[0] for a in articles]
+  expected=['cover','team','agent','idea','parallel','news','tradingview','alfa','size','project','finish','setup']
+  self.assertEqual(ids[:12],expected)
+  for i,a in enumerate(articles):
+   self.assertIn('data-index="'+str(i)+'"',a);self.assertIn('data-for="'+str(i)+'"',a)
+  for a in articles[:11]:
+   a=re.sub(r'src="data:[^"]*"','',a)
+   for term in ['HYPE','Hyperliquid','0x9946','perps-dashboard-skill.zip']:self.assertNotIn(term,a)
+  match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
+  notes=json.loads(match[1]);self.assertEqual(sum(n['seconds'] for n in notes[:12]),3600)
+  self.assertTrue(all(n['seconds']==0 for n in notes[12:]))
+  self.assertTrue(all('ДОПОЛНИТЕЛЬНО /' in a for a in articles[12:]))
  def test_skill_archive(self):
   with zipfile.ZipFile(D/'perps-dashboard-skill.zip') as z:
    self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/portfolio.json','perps-dashboard/hype-liquidation.json','perps-dashboard/build_snapshot.py'});self.assertIsNone(z.testzip())
