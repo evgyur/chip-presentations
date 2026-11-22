@@ -35,4 +35,4 @@ Exclude inverse/quanto contracts until their own pricing/contract multiplier is 
 5. Return local URL, snapshot time, data file and refresh command. No background polling or scheduled tasks unless separately requested. A snapshot is not live monitoring.
 
 ## Acceptance
-Known sample: gross 112000, net 48000, unrealized PnL 5500, margin utilization 25%, stress -10% = -4800. SOL liquidation distance 8%, BTC 40%, ETH short 50%. Missing liquidation price renders —. No credentials in output. Retain sample label for synthetic data.
+Known sample: gross 112000, net 48000, unrealized PnL 5500, margin utilization 25%, stress -10% = -4800. With SOL excluded from the scenario: -1800; this is not an executed close and does not alter actual account equity. Provide a position selector to compare both scenarios. SOL liquidation distance 8%, BTC 40%, ETH short 50%. Missing liquidation price renders —. No credentials in output. Retain sample label for synthetic data.
