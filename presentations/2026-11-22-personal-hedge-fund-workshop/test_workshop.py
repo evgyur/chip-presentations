@@ -25,11 +25,12 @@ class WorkshopTests(unittest.TestCase):
   for u in p.urls:
    if not u.startswith(('https:','http:','#','data:')):self.assertTrue((D/u.split('#')[0]).exists(),u)
  def test_sample_math(self):
-  d=json.loads((D/'sample-portfolio.json').read_text());ps=d['positions'];self.assertEqual(sum(abs(p['signed_size']*p['mark_price'])for p in ps),112000);self.assertEqual(sum(p['signed_size']*p['mark_price']for p in ps),48000);self.assertEqual(sum(p['signed_size']*(p['mark_price']-p['entry_price'])for p in ps),5500)
-  self.assertEqual(d['margin_used']/d['equity']*100,25)
-  self.assertEqual(sum(p['signed_size']*p['mark_price']*(-.1)for p in ps if p['symbol']!='SOL'),-1800)
-  self.assertEqual(int(3000/((302-294)*10)),37)
+  d=json.loads((D/'portfolio.json').read_text());ps=d['positions'];self.assertEqual(len(ps),6)
+  self.assertAlmostEqual(sum(abs(p['signed_size']*p['mark_price'])for p in ps),1961.761806)
+  self.assertAlmostEqual(sum(p['signed_size']*p['mark_price']for p in ps),-1866.367566)
+  event=json.loads((D/'hype-liquidation.json').read_text());self.assertEqual(event['fill']['liquidation']['liquidatedUser'],d['wallet']);self.assertEqual(event['coin'],'HYPE')
+  self.assertTrue(event['time_msk'].startswith('2026-11-20T16:25:57'))
  def test_skill_archive(self):
   with zipfile.ZipFile(D/'perps-dashboard-skill.zip') as z:
-   self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/sample-portfolio.json'});self.assertIsNone(z.testzip())
+   self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/portfolio.json','perps-dashboard/hype-liquidation.json','perps-dashboard/build_snapshot.py'});self.assertIsNone(z.testzip())
 if __name__=='__main__':unittest.main()
