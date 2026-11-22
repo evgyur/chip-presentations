@@ -64,6 +64,10 @@ class WorkshopTests(unittest.TestCase):
   notes=json.loads(match[1])
   self.assertEqual(len(notes),21);self.assertEqual(len({tuple(n['bullets']) for n in notes}),21)
   self.assertEqual(3000//((300-294)*10),50);self.assertEqual(3000//((302-294)*10),37)
+ def test_metric_number_layout(self):
+  s=(D/'slides.html').read_text();rule=re.search(r'\.stat-proof strong\{([^}]+)\}',s);assert rule is not None
+  self.assertIn('white-space:nowrap',rule[1]);self.assertIn('font:48px',rule[1])
+  self.assertIn('grid-template-columns:repeat(3,minmax(0,1fr))',s)
  def test_skill_archive(self):
   with zipfile.ZipFile(D/'perps-dashboard-skill.zip') as z:
    self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/portfolio.json','perps-dashboard/hype-liquidation.json','perps-dashboard/build_snapshot.py'});self.assertIsNone(z.testzip())
