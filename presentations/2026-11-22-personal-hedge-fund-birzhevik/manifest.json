@@ -1,0 +1,16 @@
+{
+  "title": "Личный хедж-фонд · Академия Биржевика",
+  "version": "1.0.0",
+  "slide_count": 23,
+  "public_path": "/presentations/personal-hedge-fund-birzhevik/",
+  "files": {
+    "index.html": "1d21f154faefd01f416d6df9c3be454c1ea900dbbc21ce883edf4ba20eea239a",
+    "slides.html": "b4aa96e3351da8a7dff95edd732eb8eed7f6d2684dc2464ec0cc99143f1c4f1c",
+    "programma.pdf": "815929fcac5b55d342d64bb87e5d0f28808be0634cba62c00467a91d3ec74820",
+    "team.png": "5d8c792adbd1656495e6850bbc15c14d1ae39653b3343240614a5ea40fdc9e4a",
+    "brand.svg": "a71ef70dc0416ddc25f7b32eb5e52e20d6f1c6f258db37e4f9cbb609e3be0b52",
+    "font-1.ttf": "c805f9436dbc268644c1d9584f01a601a653e028e08fd74b9b949f6cf8304d88",
+    "font-2.ttf": "3a3c502eeff669a231549e80df9f7c49de109bafe303170409e905d0b31a38fe",
+    "font-3.ttf": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+  }
+}
