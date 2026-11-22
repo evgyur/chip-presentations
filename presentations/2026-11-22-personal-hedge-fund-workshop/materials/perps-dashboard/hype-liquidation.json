@@ -1,0 +1,36 @@
+{
+  "wallet": "0xa00db4fbef1fe1dae76e3b975d0969663c11690c",
+  "coin": "HYPE",
+  "timestamp": 1795181157168,
+  "time_msk": "2026-11-20T16:25:57.168000+03:00",
+  "side": "long",
+  "price": 62.231,
+  "size": 31.65,
+  "notional_usd": 1969.61115,
+  "closed_pnl": -112.45245,
+  "fee": 0.850872,
+  "tx": "0x057580b00f4ca90b06ef044935ee0e020c260095aa4fc7dda93e2c02ce4082f5",
+  "source_url": "https://app.hyperliquid.xyz/explorer/tx/0x057580b00f4ca90b06ef044935ee0e020c260095aa4fc7dda93e2c02ce4082f5",
+  "fill": {
+    "coin": "HYPE",
+    "px": "62.231",
+    "sz": "31.65",
+    "side": "A",
+    "time": 1795181157168,
+    "startPosition": "31.65",
+    "dir": "Close Long",
+    "closedPnl": "-112.45245",
+    "hash": "0x057580b00f4ca90b06ef044935ee0e020c260095aa4fc7dda93e2c02ce4082f5",
+    "oid": 611373675402,
+    "crossed": true,
+    "fee": "0.850872",
+    "tid": 7753039286408,
+    "liquidation": {
+      "liquidatedUser": "0xa00db4fbef1fe1dae76e3b975d0969663c11690c",
+      "markPx": "62.277",
+      "method": "market"
+    },
+    "feeToken": "USDC",
+    "twapId": null
+  }
+}
