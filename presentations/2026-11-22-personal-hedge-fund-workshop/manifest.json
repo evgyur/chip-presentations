@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "title": "Мастер-класс Человек 2.0: Личный хедж-фонд",
+  "public_path": "/presentations/personal-hedge-fund/",
+  "slide_count": 18,
+  "prompt_count": 9,
+  "files": {
+    "index.html": "1e0b41d13b03e184dd27d04a6959f386ddafa142d084d555fe267284e0dc8e60",
+    "slides.html": "835f2517fe8a45173db22e75e1d7a9fea5c09951d590669ce791421951fc002f",
+    "dashboard.html": "b0c9661f18a241c3e4fd900b3c42cffe69173b89f575919e725b2ec9844dbb99",
+    "sample-portfolio.json": "dda1ae9fcd3804eb6341e433543dfc70feea36b398361e3b2fb09562870bebed",
+    "perps-dashboard-skill.zip": "98d8e1a0b5c95ee8f7bb22bdc8e6bdce91d55a3d97e7ea5b81914399ba4140fa",
+    "prompts.json": "313d5b5bf34521e0d2e490cad91fb09ec7941b3960d72d186e80e367f147d2ad"
+  }
+}
