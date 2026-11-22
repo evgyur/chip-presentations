@@ -30,7 +30,7 @@ Exclude inverse/quanto contracts until their own pricing/contract multiplier is 
 ## Workflow
 1. Read inputs and verify the public wallet and snapshot timestamp. Validate schema and source timestamps.
 2. Normalize with a separate local script. Check two positions and account equity against the source.
-3. Copy template.html into dashboard.html, replace the inline portfolio data with validated JSON or use its file-upload control. Preserve HTML escaping; do not inject data as untrusted HTML/script. For inline JSON escape < as \u003c to prevent a script-closing injection.
+3. Copy template.html into dashboard.html. Preserve the MTW2 dashboard visual system exactly: embedded Body/Mono fonts, white bordered panel, mint-gray header, four metrics, account/positions/risk columns, green/amber badges and bottom stress strip. Keep the responsive layout and working controls. Replace the inline portfolio data with validated JSON or use its file-upload control. Preserve HTML escaping; do not inject data as untrusted HTML/script. For inline JSON escape < as \u003c to prevent a script-closing injection.
 4. Serve on loopback using an available local HTTP server; do not expose to the internet. Open in browser, check desktop and mobile, import JSON, move stress slider and verify totals by code.
 5. Return local URL, snapshot time, data file and refresh command. No background polling or scheduled tasks unless separately requested. A snapshot is not live monitoring.
 

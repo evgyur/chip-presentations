@@ -44,6 +44,16 @@ class WorkshopTests(unittest.TestCase):
   m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
   r=json.loads((D/'wallet-source.json').read_text());d=m.normalize_dexes(r['wallet'],r['snapshots'])
   self.assertEqual(d,json.loads((D/'portfolio.json').read_text()))
+ def test_mtw2_dashboard_style(self):
+  s=(D/'dashboard.html').read_text();reference=(D.parent/'2026-11-18-personal-hedge-fund/index.html').read_text()
+  for selector in ['.rd{','.rd-top{','.rd-safe{','.rd-warn{']:
+   rule=re.search(re.escape(selector)+r'[^}]+}',reference);assert rule is not None
+   self.assertIn(rule[0],s)
+  self.assertIn('font-family:Body',reference)
+  self.assertIn('Body,Arial,sans-serif',s);self.assertIn('@font-face',s)
+  self.assertIn('id="accounts"',s);self.assertIn('id="exclude"',s)
+  self.assertNotIn('64<span>/100',s);self.assertNotIn('ROI за год',s)
+  self.assertEqual((D/'materials/perps-dashboard/template.html').read_text(),s)
  def test_skill_archive(self):
   with zipfile.ZipFile(D/'perps-dashboard-skill.zip') as z:
    self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/portfolio.json','perps-dashboard/hype-liquidation.json','perps-dashboard/build_snapshot.py'});self.assertIsNone(z.testzip())
