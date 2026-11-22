@@ -82,6 +82,11 @@ class WorkshopTests(unittest.TestCase):
   notes=json.loads(match[1]);self.assertEqual(sum(n['seconds'] for n in notes[:12]),3600)
   self.assertTrue(all(n['seconds']==0 for n in notes[12:]))
   self.assertTrue(all('ДОПОЛНИТЕЛЬНО /' in a for a in articles[12:]))
+ def test_team_job_titles(self):
+  s=(D/'slides.html').read_text();a=re.findall(r'<article[^>]*id="team".*?</article>',s,re.S)[0]
+  self.assertEqual(re.findall(r'<h3>(.*?)</h3>',a),['Информационный аналитик','Рыночный аналитик','Исследователь стратегий','Риск-менеджер','Трейдер','Управляющий капиталом'])
+  self.assertEqual(a.count('class="teammate role-covered"'),3);self.assertEqual(a.count('class="teammate role-not-covered"'),3)
+  self.assertEqual(a.count('Не разбираем в этом эфире.'),3)
  def test_skill_archive(self):
   with zipfile.ZipFile(D/'perps-dashboard-skill.zip') as z:
    self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/portfolio.json','perps-dashboard/hype-liquidation.json','perps-dashboard/build_snapshot.py'});self.assertIsNone(z.testzip())
