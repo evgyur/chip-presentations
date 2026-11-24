@@ -1,0 +1,23 @@
+{
+  "title": "Трейдер 2.0: как искусственный интеллект меняет правила игры",
+  "speaker": "Евгений Юрченко · CHIP",
+  "version": "1.0.0",
+  "date": "2026-11-24",
+  "slides": 15,
+  "url": "https://human20.app/presentations/trader20-ai/",
+  "files": {
+    "assets/brand.svg": "a71ef70dc0416ddc25f7b32eb5e52e20d6f1c6f258db37e4f9cbb609e3be0b52",
+    "assets/chip.png": "cf7ac71acefcdefe2254cea739025e44c2509e0914ab496616ae8f6363d161f0",
+    "assets/hype-chart.png": "fa5cedec8d9c88bf2c367f1688693fa353e74b262691fc29a7ccab6d4d962c8b",
+    "assets/hype-events.png": "ac8e2aa8b416cd17e1dbfe5a58b1273b991c761a35b46ebdeb173880147e2a08",
+    "assets/team.png": "5d8c792adbd1656495e6850bbc15c14d1ae39653b3343240614a5ea40fdc9e4a",
+    "cover.webp": "8051e00393ecdd82e51f087a4eb6f3c15f177c1b985e7975c0a2d27fecbd3780",
+    "font-0.ttf": "c805f9436dbc268644c1d9584f01a601a653e028e08fd74b9b949f6cf8304d88",
+    "font-1.ttf": "3a3c502eeff669a231549e80df9f7c49de109bafe303170409e905d0b31a38fe",
+    "font-2.ttf": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+    "fonts.css": "e6e6eb5edb28e8e13b5da40381377dbaea2caf2a0b9f2aaf402b38761b9931bb",
+    "index.html": "df7fb598540212e5b821c6df1510aa045f928191f254bdedc7badb8b5a998176",
+    "slides.html": "a819763583ec3ca1bba31fd8e3ee084ec25c94b13537e48236d56bc45eba55ec",
+    "trader20-ai.pdf": "b80639b0bf7c490177f6be37557e12657d38772cc173cf53230b90e2b5844270"
+  }
+}

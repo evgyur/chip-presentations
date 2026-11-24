@@ -6,6 +6,7 @@
 
 | Дата | Презентация | Версия | Материалы |
 | --- | --- | --- | --- |
+| 24.11.2026 | [Трейдер 2.0: как искусственный интеллект меняет правила игры](https://human20.app/presentations/trader20-ai/) | 1.0.0 · 15 слайдов | [Слайды](presentations/2026-11-24-trader20-ai-talk/slides.html) · [PDF](presentations/2026-11-24-trader20-ai-talk/trader20-ai.pdf) |
 | 22.11.2026 | [Мастер-класс Человек 2.0: Личный хедж-фонд](https://human20.app/presentations/personal-hedge-fund/) | 3.0.0 · 21 слайд · 12 промптов | [Слайды](presentations/2026-11-22-personal-hedge-fund-workshop/slides.html) · [Скил дашборда](presentations/2026-11-22-personal-hedge-fund-workshop/perps-dashboard-skill.zip) |
 | 18.11.2026 | [Личный хедж-фонд — Moscow Trading Week 2](https://human20.app/presentations/mtw2/) | 1.0.84 · 19 слайдов | [HTML](presentations/2026-11-18-personal-hedge-fund/index.html) · [PDF](presentations/2026-11-18-personal-hedge-fund/mtw2.pdf) |
 
