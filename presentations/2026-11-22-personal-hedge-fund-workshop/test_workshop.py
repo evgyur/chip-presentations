@@ -17,8 +17,12 @@ class Tags(HTMLParser):
 class WorkshopTests(unittest.TestCase):
  def test_deck(self):
   s=(D/'slides.html').read_text();p=Tags();p.feed(s)
-  self.assertEqual(len(p.slides),21);self.assertEqual(len(p.ids),len(set(p.ids)));self.assertEqual(len(p.copy),12)
-  prompts=json.loads((D/'prompts.json').read_text());self.assertTrue(set(p.copy)<=set(prompts));self.assertIn('id="prompt-copy"',s)
+  self.assertEqual(len(p.slides),21);self.assertEqual(len(p.ids),len(set(p.ids)));self.assertEqual(len(p.copy),13)
+  prompts=json.loads((D/'prompts.json').read_text());self.assertEqual(len(prompts),24);self.assertTrue(set(p.copy)<=set(prompts));self.assertIn('id="prompt-copy"',s)
+  exercises=json.loads((D/'exercises.json').read_text());self.assertEqual(set(exercises),set(p.slides));self.assertEqual(len({e['prompt'] for e in exercises.values()}),21)
+  self.assertEqual(len(re.findall(r'data-practice="p-[^"]+"',s)),21)
+  self.assertTrue(all(e['expected'] and e['check'] and e['fallback'] for e in exercises.values()))
+  embedded=re.search(r'const PROMPTS=(.*?), EXERCISES=',s,re.S);assert embedded is not None;self.assertEqual(json.loads(embedded[1]),prompts)
   match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
   notes=json.loads(match[1]);self.assertEqual(sum(x['seconds'] for x in notes),3600)
   self.assertNotIn('Terra',s);self.assertNotIn('Сначала установите Hermes',s)

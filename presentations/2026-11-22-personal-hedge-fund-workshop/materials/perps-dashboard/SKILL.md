@@ -35,4 +35,5 @@ Exclude inverse/quanto contracts until their own pricing/contract multiplier is 
 5. Return local URL, snapshot time, data file and refresh command. No background polling or scheduled tasks unless separately requested. A snapshot is not live monitoring.
 
 ## Acceptance
+These numeric checks apply ONLY to the bundled 2026-11-22 fixture. A fresh read may have different positions and values; never force it to match this snapshot. Preserve the fixture and write refreshes to a separate new file.
 Wallet 0x99460c6b44fd9d93528b3b6e3365793acb40bb46: 4 long positions (NEAR, HYPE, ZEC, xyz:ANT), gross 3211801.9177200003, net 3211801.9177200003. Capital is the sum of separately reported core and xyz accounts. Refresh both with build_snapshot.py --dexes ,xyz. Compare -3% with and without HYPE. Friday partial HYPE liquidation: 7800.0 HYPE, 113 fills, notional 484933.73172, closed PnL -61047.54828. Match every liquidatedUser to this wallet. Use unrealized_pnl from the API when provided. Null fields render —. No credentials in output.
