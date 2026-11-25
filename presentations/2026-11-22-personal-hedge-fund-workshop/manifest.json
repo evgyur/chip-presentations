@@ -6,10 +6,10 @@
   "prompt_count": 24,
   "files": {
     "index.html": "3eb2737d82c1de963d03d1468574bba06844cf8941af287128633517f5f9ce0f",
-    "slides.html": "be5b8f7f3c00ab9fd71dd560abd60a6eabd99d9cfd50b626c9b276e706b82c10",
-    "dashboard.html": "92ef3fb1793f14eb5342770329cd79dc5b629c9160343cf09edbb86d7e78fb9b",
+    "slides.html": "48516b39c42eb008d1555340f4c3d12e1ca8bafd4b66e8e3eadabdf2463f060b",
+    "dashboard.html": "446307b73450913c9e65e1faf6218aa6a52018370ea3e890849f92da0d2cec34",
     "sample-portfolio.json": "173decb8b3e7b7288a334a37e2bfa0b111334c2315dc6c49cbd1c37c85371854",
-    "perps-dashboard-skill.zip": "a737eb5d2d2bcbb36d9039bba7b4186f05b563851fa914ba4e6d4f9cba9616fd",
+    "perps-dashboard-skill.zip": "a53bda36eff3f1b2c10bd87024b4a0c8d0947fa375d9a3bb45c5d639d2889ce1",
     "prompts.json": "bbda490bbaa4c615068c98c68098eab1bdbe4797ab1da125bebd867597454988",
     "cover.webp": "373c4f2a17b0c626b786d53511b34f42f24e209830819276eb617208644ed54e",
     "portfolio.json": "173decb8b3e7b7288a334a37e2bfa0b111334c2315dc6c49cbd1c37c85371854",
@@ -17,7 +17,7 @@
     "wallet-source.json": "e307d26878d389b0f85834df220cb6fb96e8f19ba7ad4cf1c1c4bdac591405bd",
     "exercises.json": "e5623dd2a4cbb56e6988b44bb50706c33ca79346ec69e90d6cbbba1fc6f5d863",
     "prompts.md": "e312bb919ecf46f9621f07ba8c439aca667620c059567bc8e25f707fb5279471",
-    "workshop.pdf": "e1c4e5ef2907dd0a6fff815c9c3c4a27bf84334d0a389d5a62fc0347a037f449",
+    "workshop.pdf": "18627f6af491996fa07d248867a3dcb099827716dbbf51180243831b40faa34f",
     "combined-demo.json": "21933619eda5d32da0384762f8f77616f3a18feb6ea74a5a6cc1df6df0db5f1f"
   },
   "exercise_count": 21,
