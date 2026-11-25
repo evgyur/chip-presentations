@@ -62,7 +62,7 @@ class WorkshopTests(unittest.TestCase):
   s=(D/'slides.html').read_text();visible=re.sub(r'srcdoc=".*?"(?=>)','',s,flags=re.S)
   for phrase in ['ХОЧУ СЕБЕ ТАКОЕ','ВОТ ГДЕ НАЧИНАЕТСЯ АГЕНТ','Не предсказатель','силы убеждения','МАЛЕНЬКИЙ ЗАВЕРШЁННЫЙ ЦИКЛ','Кто-то в X уже всё объяснил','А если убрать SOL','Покажите результат, затем дайте короткое поручение']:
    self.assertNotIn(phrase,visible)
-  for title in ['Дашборд кошелька Hyperliquid','Собираем дашборд в Codex','Рассчитываем размер позиции','Что останется после мастер-класса']:
+  for title in ['Все позиции — на одной странице','Попросим Codex собрать дашборд','Сколько акций купить при риске 3 000 ₽?','Сохраните три результата мастер-класса']:
    self.assertIn('<h2>'+title+'</h2>',visible)
   match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
   notes=json.loads(match[1])
@@ -88,13 +88,13 @@ class WorkshopTests(unittest.TestCase):
   self.assertTrue(all(n['seconds']>0 for n in notes[:20]));self.assertEqual(notes[-1]['seconds'],0)
   self.assertTrue(all('ДОПОЛНИТЕЛЬНО / КРИПТОПОРТФЕЛЬ' not in a for a in articles))
   self.assertIn('Копировать в Codex',s);self.assertIn('id="copy-slide-prompt"',s)
-  for phrase in ['карточка сделки','дашборд','скил']:
+  for phrase in ['план сделки','страница портфеля','инструкция для codex']:
    self.assertIn(phrase,articles[19].lower())
  def test_team_job_titles(self):
   s=(D/'slides.html').read_text();a=re.findall(r'<article[^>]*id="team".*?</article>',s,re.S)[0]
   self.assertEqual(re.findall(r'<h3>(.*?)</h3>',a),['Информационный аналитик','Рыночный аналитик','Исследователь стратегий','Риск-менеджер','Трейдер','Управляющий капиталом'])
   self.assertEqual(a.count('class="teammate role-covered"'),3);self.assertEqual(a.count('class="teammate role-not-covered"'),3)
-  self.assertEqual(a.count('Не разбираем в этом эфире.'),3)
+  self.assertEqual(a.count('Сегодня'),3)
  def test_skill_archive(self):
   with zipfile.ZipFile(D/'perps-dashboard-skill.zip') as z:
    self.assertEqual(set(z.namelist()),{'perps-dashboard/SKILL.md','perps-dashboard/template.html','perps-dashboard/portfolio.json','perps-dashboard/hype-liquidation.json','perps-dashboard/build_snapshot.py'});self.assertIsNone(z.testzip())
