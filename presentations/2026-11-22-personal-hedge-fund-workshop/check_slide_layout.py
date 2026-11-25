@@ -15,10 +15,10 @@ def main():
         browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox'])
         try:
             page=browser.new_page(viewport={'width':1920,'height':1192});page.on('pageerror',lambda e:errors.append(str(e)))
-            page.goto(url,wait_until='load');page.evaluate('document.fonts.ready');page.wait_for_function('window.__deck?.count===21')
+            page.goto(url,wait_until='load');page.evaluate('document.fonts.ready');page.wait_for_function('window.__deck?.count===22')
             for width,height in sizes:
                 page.set_viewport_size({'width':width,'height':height})
-                for i in range(21):
+                for i in range(22):
                     page.evaluate('(i)=>window.__deck.show(i)',i)
                     result=page.evaluate('''()=>{
                         const s=document.querySelector('.slide.active'),r=s.getBoundingClientRect(),f=s.querySelector('.slide-footer').getBoundingClientRect(),scale=r.width/1600;
@@ -35,9 +35,9 @@ def main():
             page.keyboard.press('n');assert page.locator('.notes').evaluate("x=>x.classList.contains('open')");page.keyboard.press('Escape');page.wait_for_timeout(250)
             if args.render_dir:
                 out=Path(args.render_dir);out.mkdir(parents=True,exist_ok=True)
-                for i in range(21):
+                for i in range(22):
                     page.mouse.move(0,0);page.evaluate('(i)=>window.__deck.show(i)',i);page.wait_for_timeout(60);page.locator('.slide.active').screenshot(path=str(out/f'{i+1:02d}.png'),animations='disabled')
-            report={'slides':21,'viewports':len(sizes),'layout_checks':checks,'minimum_footer_gap_native_px':minimum,'problems':problems,'console_errors':errors,'navigation':'passed','notes':'passed'}
+            report={'slides':22,'viewports':len(sizes),'layout_checks':checks,'minimum_footer_gap_native_px':minimum,'problems':problems,'console_errors':errors,'navigation':'passed','notes':'passed'}
             if args.report:Path(args.report).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
             print(json.dumps(report,ensure_ascii=False,indent=2))
             assert not problems and not errors,'Footer/layout regression failed'

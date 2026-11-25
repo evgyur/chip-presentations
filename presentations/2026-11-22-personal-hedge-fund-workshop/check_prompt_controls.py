@@ -9,7 +9,7 @@ def main():
  with sync_playwright() as p:
   b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
   try:
-   c=b.new_context(permissions=['clipboard-read','clipboard-write'],viewport={'width':1920,'height':1192});g=c.new_page();g.on('pageerror',lambda e:report['errors'].append(str(e)));g.goto(args.url or (d/'slides.html').as_uri());g.evaluate('document.fonts.ready');g.wait_for_function('window.__deck?.count===21');assert g.locator('.slide-prompt-controls,.slide-copy-prompt,.slide-open-prompt').count()==0
+   c=b.new_context(permissions=['clipboard-read','clipboard-write'],viewport={'width':1920,'height':1192});g=c.new_page();g.on('pageerror',lambda e:report['errors'].append(str(e)));g.goto(args.url or (d/'slides.html').as_uri());g.evaluate('document.fonts.ready');g.wait_for_function('(n)=>window.__deck?.count===n',arg=len(E));assert g.locator('.slide-prompt-controls,.slide-copy-prompt,.slide-open-prompt').count()==0
    for size in [(1920,1192),(1366,768),(1024,768),(390,844),(320,568),(844,390)]:
     g.set_viewport_size({'width':size[0],'height':size[1]});g.evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))')
     for i,(sid,e) in enumerate(E.items()):

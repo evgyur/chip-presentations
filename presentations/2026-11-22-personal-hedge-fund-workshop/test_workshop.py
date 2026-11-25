@@ -17,10 +17,10 @@ class Tags(HTMLParser):
 class WorkshopTests(unittest.TestCase):
  def test_deck(self):
   s=(D/'slides.html').read_text();p=Tags();p.feed(s)
-  self.assertEqual(len(p.slides),21);self.assertEqual(len(p.ids),len(set(p.ids)));self.assertEqual(len(p.copy),13)
-  prompts=json.loads((D/'prompts.json').read_text());self.assertEqual(len(prompts),24);self.assertTrue(set(p.copy)<=set(prompts));self.assertIn('id="prompt-copy"',s)
-  exercises=json.loads((D/'exercises.json').read_text());self.assertEqual(set(exercises),set(p.slides));self.assertEqual(len({e['prompt'] for e in exercises.values()}),21)
-  self.assertEqual(len(re.findall(r'data-practice="p-[^"]+"',s)),21)
+  self.assertEqual(len(p.slides),22);self.assertEqual(len(p.ids),len(set(p.ids)));self.assertEqual(len(p.copy),13)
+  prompts=json.loads((D/'prompts.json').read_text());self.assertEqual(len(prompts),25);self.assertTrue(set(p.copy)<=set(prompts));self.assertIn('id="prompt-copy"',s)
+  exercises=json.loads((D/'exercises.json').read_text());self.assertEqual(set(exercises),set(p.slides));self.assertEqual(len({e['prompt'] for e in exercises.values()}),22)
+  self.assertEqual(len(re.findall(r'data-practice="p-[^"]+"',s)),22)
   self.assertTrue(all(e['expected'] and e['check'] and e['fallback'] for e in exercises.values()))
   embedded=re.search(r'const PROMPTS=(.*?), EXERCISES=',s,re.S);assert embedded is not None;self.assertEqual(json.loads(embedded[1]),prompts)
   match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
@@ -66,7 +66,7 @@ class WorkshopTests(unittest.TestCase):
    self.assertIn('<h2>'+title+'</h2>',visible)
   match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
   notes=json.loads(match[1])
-  self.assertEqual(len(notes),21);self.assertEqual(len({tuple(n['bullets']) for n in notes}),21)
+  self.assertEqual(len(notes),22);self.assertEqual(len({tuple(n['bullets']) for n in notes}),22)
   self.assertEqual(3000//((300-294)*10),50);self.assertEqual(3000//((302-294)*10),37)
  def test_metric_number_layout(self):
   s=(D/'slides.html').read_text();rule=re.search(r'\.stat-proof strong\{([^}]+)\}',s);assert rule is not None
@@ -75,21 +75,21 @@ class WorkshopTests(unittest.TestCase):
  def test_moex_program_order(self):
   s=(D/'slides.html').read_text();articles=re.findall(r'<article\b.*?</article>',s,re.S)
   ids=[re.findall(r'id="([^"]+)"',a)[0] for a in articles]
-  expected=['cover','setup','team','agent','idea','parallel','news','tradingview','alfa','size','project','result','question','skill','first-order','follow-up','verify','your-data','repeat','finish','social']
+  expected=['cover','setup','team','agent','idea','parallel','news','chart-settings','tradingview','alfa','size','project','result','question','skill','first-order','follow-up','verify','your-data','repeat','finish','social']
   self.assertEqual(ids,expected)
   for i,a in enumerate(articles):
    self.assertIn('data-index="'+str(i)+'"',a);self.assertIn('data-for="'+str(i)+'"',a)
-  for a in articles[:11]:
+  for a in articles[:12]:
    a=re.sub(r'src="data:[^"]*"','',a)
    for term in ['HYPE','Hyperliquid','0x9946','perps-dashboard-skill.zip']:self.assertNotIn(term,a)
   match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
-  notes=json.loads(match[1]);self.assertEqual(sum(n['seconds'] for n in notes[:20]),3600)
-  self.assertEqual(sum(n['seconds'] for n in notes[11:18]),1200)
-  self.assertTrue(all(n['seconds']>0 for n in notes[:20]));self.assertEqual(notes[-1]['seconds'],0)
+  notes=json.loads(match[1]);self.assertEqual(sum(n['seconds'] for n in notes[:21]),3600)
+  self.assertEqual(sum(n['seconds'] for n in notes[12:19]),1200)
+  self.assertTrue(all(n['seconds']>0 for n in notes[:21]));self.assertEqual(notes[-1]['seconds'],0)
   self.assertTrue(all('ДОПОЛНИТЕЛЬНО / КРИПТОПОРТФЕЛЬ' not in a for a in articles))
   self.assertIn('Копировать в Codex',s);self.assertIn('id="copy-slide-prompt"',s)
   for phrase in ['план сделки','страница портфеля','инструкция для codex']:
-   self.assertIn(phrase,articles[19].lower())
+   self.assertIn(phrase,articles[20].lower())
  def test_team_job_titles(self):
   s=(D/'slides.html').read_text();a=re.findall(r'<article[^>]*id="team".*?</article>',s,re.S)[0]
   self.assertEqual(re.findall(r'<h3>(.*?)</h3>',a),['Информационный аналитик','Рыночный аналитик','Исследователь стратегий','Риск-менеджер','Трейдер','Управляющий капиталом'])
