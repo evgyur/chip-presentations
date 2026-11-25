@@ -17,7 +17,7 @@ class Tags(HTMLParser):
 class WorkshopTests(unittest.TestCase):
  def test_deck(self):
   s=(D/'slides.html').read_text();p=Tags();p.feed(s)
-  self.assertEqual(len(p.slides),21);self.assertEqual(len(p.ids),len(set(p.ids)));self.assertEqual(len(p.copy),13)
+  self.assertEqual(len(p.slides),21);self.assertEqual(len(p.ids),len(set(p.ids)));self.assertEqual(len(p.copy),34)
   prompts=json.loads((D/'prompts.json').read_text());self.assertEqual(len(prompts),24);self.assertTrue(set(p.copy)<=set(prompts));self.assertIn('id="prompt-copy"',s)
   exercises=json.loads((D/'exercises.json').read_text());self.assertEqual(set(exercises),set(p.slides));self.assertEqual(len({e['prompt'] for e in exercises.values()}),21)
   self.assertEqual(len(re.findall(r'data-practice="p-[^"]+"',s)),21)
