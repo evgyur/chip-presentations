@@ -75,17 +75,21 @@ class WorkshopTests(unittest.TestCase):
  def test_moex_program_order(self):
   s=(D/'slides.html').read_text();articles=re.findall(r'<article\b.*?</article>',s,re.S)
   ids=[re.findall(r'id="([^"]+)"',a)[0] for a in articles]
-  expected=['cover','team','agent','idea','parallel','news','tradingview','alfa','size','project','finish','setup']
-  self.assertEqual(ids[:12],expected)
+  expected=['cover','setup','team','agent','idea','parallel','news','tradingview','alfa','size','project','result','question','skill','first-order','follow-up','verify','your-data','repeat','finish','social']
+  self.assertEqual(ids,expected)
   for i,a in enumerate(articles):
    self.assertIn('data-index="'+str(i)+'"',a);self.assertIn('data-for="'+str(i)+'"',a)
   for a in articles[:11]:
    a=re.sub(r'src="data:[^"]*"','',a)
    for term in ['HYPE','Hyperliquid','0x9946','perps-dashboard-skill.zip']:self.assertNotIn(term,a)
   match=re.search(r'const NOTES=(.*?);\nconst slides=',s,re.S);assert match is not None
-  notes=json.loads(match[1]);self.assertEqual(sum(n['seconds'] for n in notes[:12]),3600)
-  self.assertTrue(all(n['seconds']==0 for n in notes[12:]))
-  self.assertTrue(all('ДОПОЛНИТЕЛЬНО /' in a for a in articles[12:]))
+  notes=json.loads(match[1]);self.assertEqual(sum(n['seconds'] for n in notes[:20]),3600)
+  self.assertEqual(sum(n['seconds'] for n in notes[11:18]),1200)
+  self.assertTrue(all(n['seconds']>0 for n in notes[:20]));self.assertEqual(notes[-1]['seconds'],0)
+  self.assertTrue(all('ДОПОЛНИТЕЛЬНО / КРИПТОПОРТФЕЛЬ' not in a for a in articles))
+  self.assertIn('Копировать в Codex',s);self.assertIn('id="copy-slide-prompt"',s)
+  for phrase in ['карточка сделки','дашборд','скил']:
+   self.assertIn(phrase,articles[19].lower())
  def test_team_job_titles(self):
   s=(D/'slides.html').read_text();a=re.findall(r'<article[^>]*id="team".*?</article>',s,re.S)[0]
   self.assertEqual(re.findall(r'<h3>(.*?)</h3>',a),['Информационный аналитик','Рыночный аналитик','Исследователь стратегий','Риск-менеджер','Трейдер','Управляющий капиталом'])

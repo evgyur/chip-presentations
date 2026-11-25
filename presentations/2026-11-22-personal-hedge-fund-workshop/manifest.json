@@ -1,23 +1,25 @@
 {
-  "version": "3.6.0",
-  "title": "Мастер-класс Человек 2.0: Личный хедж-фонд",
+  "version": "4.0.0",
+  "title": "Торговая идея и дашборд в Codex · Человек 2.0",
   "public_path": "/presentations/personal-hedge-fund/",
   "slide_count": 21,
   "prompt_count": 24,
   "files": {
-    "index.html": "06bc46a80ecac560e576e36789fc09aedce69b6f1d27f8e63cc6a6e68c9491d4",
-    "slides.html": "fb5a2482cb56de13b087a680de85b60356d09a6c81596eda31925b4d57a5fde8",
+    "index.html": "fb7b2a24cf519f4b70bf1e3ef9bb0f540dadbc744d1f1a56af0b2f65dd598413",
+    "slides.html": "08692089108c44485a36782311d3fd80af5a0c129aeb5fe89155f2bfeb22b201",
     "dashboard.html": "297cafa4ecfbc71d7d80b16313240a79d3c0ef635512bd57a04ff29d4620402e",
     "sample-portfolio.json": "173decb8b3e7b7288a334a37e2bfa0b111334c2315dc6c49cbd1c37c85371854",
     "perps-dashboard-skill.zip": "8a244df70de4859bb6c5f0ea0d1d520e80139f107d4c6fdbf4c3b7fc3da51855",
-    "prompts.json": "d5e8d15c86adc477c28fe7cea11d2aabdbad53f07e7bf632a4beb33d757edbb1",
-    "cover.webp": "c0f0893dc5de6c00daa24b168ca8952d67b5f655e3cf0a3ac9f4ff1423c9adae",
+    "prompts.json": "79b10197d152650606829c1bf3c41bdd665f6f21b7baac0e82fdaf5513dfa5be",
+    "cover.webp": "dfd7d46d106295cdfac2bcf251b3f29d473d84e10214f8b4586ab07a2d0275bf",
     "portfolio.json": "173decb8b3e7b7288a334a37e2bfa0b111334c2315dc6c49cbd1c37c85371854",
     "hype-liquidation.json": "d0d45f690e595c9644fb73422b0948370f46c1b0be923f7e5f0c61706ebd879e",
     "wallet-source.json": "e307d26878d389b0f85834df220cb6fb96e8f19ba7ad4cf1c1c4bdac591405bd",
-    "exercises.json": "0bac428a379bebf37b9238da4285a5385082ec55c125d42cdc18c1a7a8ec47c0",
-    "prompts.md": "b564623c2fca8b28346464592973fec57f0e14f68948afc346179623f059df8d",
-    "workshop.pdf": "037300bbe199c2839e556f876a92bb9b3ef2239782421bf04a12625497464d71"
+    "exercises.json": "8c7ddaaf4cbb2478d5022260e5ab143a1a2c1f63e8cdc7758f5789ecefadf367",
+    "prompts.md": "78d630067e5e054f77401ba3a8de9b9e9f22cde226d0bfce9f3fff3c34804b0e",
+    "workshop.pdf": "14f800c6e9edc96086199aa29f789fdff8c7a95688b92de5bfe0468fb777e1d5"
   },
-  "exercise_count": 21
+  "exercise_count": 21,
+  "main_slide_count": 20,
+  "duration_seconds": 3600
 }
