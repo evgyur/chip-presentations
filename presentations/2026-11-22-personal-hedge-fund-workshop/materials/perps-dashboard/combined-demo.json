@@ -1,0 +1,171 @@
+{
+  "schema_version": 2,
+  "accounts": [
+    {
+      "as_of": "2026-11-22T12:58:23.992000+00:00",
+      "currency": "USD",
+      "equity": 304938.028934,
+      "margin_used": 321180.191772,
+      "source": "Hyperliquid · 0x99460c6b44fd9d93528b3b6e3365793acb40bb46",
+      "source_url": "https://intel.trade/address/0x99460c6b44fd9d93528b3b6e3365793acb40bb46",
+      "wallet": "0x99460c6b44fd9d93528b3b6e3365793acb40bb46",
+      "id": "onchain-main",
+      "label": "Hyperliquid · core + xyz",
+      "market": "onchain",
+      "mode": "snapshot",
+      "positions": [
+        {
+          "symbol": "NEAR",
+          "venue": "Hyperliquid",
+          "signed_size": 47318.8,
+          "entry_price": 2.91654,
+          "mark_price": 2.9919000000000002,
+          "liquidation_price": null,
+          "leverage": 10,
+          "margin_mode": "cross",
+          "margin_used": 14157.311772,
+          "unrealized_pnl": 3565.481775,
+          "id": "perp-0",
+          "kind": "perp",
+          "multiplier": 1,
+          "quantity_unit": "ед.",
+          "currency": "USD"
+        },
+        {
+          "symbol": "HYPE",
+          "venue": "Hyperliquid",
+          "signed_size": 24200.0,
+          "entry_price": 62.6079,
+          "mark_price": 62.85,
+          "liquidation_price": 46.6988045263,
+          "leverage": 10,
+          "margin_mode": "cross",
+          "margin_used": 152097.0,
+          "unrealized_pnl": 5857.385557,
+          "id": "perp-1",
+          "kind": "perp",
+          "multiplier": 1,
+          "quantity_unit": "ед.",
+          "currency": "USD"
+        },
+        {
+          "symbol": "ZEC",
+          "venue": "Hyperliquid",
+          "signed_size": 1500.0,
+          "entry_price": 799.9785,
+          "mark_price": 792.4872,
+          "liquidation_price": 531.9145796905,
+          "leverage": 10,
+          "margin_mode": "cross",
+          "margin_used": 118873.08,
+          "unrealized_pnl": -11236.961154,
+          "id": "perp-2",
+          "kind": "perp",
+          "multiplier": 1,
+          "quantity_unit": "ед.",
+          "currency": "USD"
+        },
+        {
+          "symbol": "xyz:ANT",
+          "venue": "Hyperliquid",
+          "signed_size": 4000.0,
+          "entry_price": 89.7226,
+          "mark_price": 90.132,
+          "liquidation_price": null,
+          "leverage": 10,
+          "margin_mode": "cross",
+          "margin_used": 36052.8,
+          "unrealized_pnl": 1637.28777,
+          "id": "perp-3",
+          "kind": "perp",
+          "multiplier": 1,
+          "quantity_unit": "ед.",
+          "currency": "USD"
+        }
+      ],
+      "coverage": {
+        "included": 4,
+        "excluded": []
+      },
+      "notes": [
+        "Сумма отдельно полученных снимков core и xyz; это не единый ликвидационный запас."
+      ]
+    },
+    {
+      "id": "moex-demo",
+      "label": "Мосбиржа · учебный пример",
+      "market": "moex",
+      "mode": "sample",
+      "currency": "RUB",
+      "as_of": "2026-11-25T11:11:48.227311+00:00",
+      "equity": 1000000,
+      "cash": 810000,
+      "margin_used": 0,
+      "positions": [
+        {
+          "id": "moex-1",
+          "symbol": "SBER",
+          "venue": "MOEX",
+          "kind": "stock",
+          "signed_size": 300,
+          "quantity_unit": "шт.",
+          "currency": "RUB",
+          "entry_price": 290,
+          "mark_price": 300,
+          "multiplier": 1,
+          "unrealized_pnl": 3000,
+          "pnl_source": "profitLoss брокера",
+          "margin_used": null,
+          "liquidation_price": null,
+          "leverage": null
+        },
+        {
+          "id": "moex-2",
+          "symbol": "LKOH",
+          "venue": "MOEX",
+          "kind": "stock",
+          "signed_size": 10,
+          "quantity_unit": "шт.",
+          "currency": "RUB",
+          "entry_price": 7200,
+          "mark_price": 7000,
+          "multiplier": 1,
+          "unrealized_pnl": -2000,
+          "pnl_source": "profitLoss брокера",
+          "margin_used": null,
+          "liquidation_price": null,
+          "leverage": null
+        },
+        {
+          "id": "moex-3",
+          "symbol": "GAZP",
+          "venue": "MOEX",
+          "kind": "stock",
+          "signed_size": 200,
+          "quantity_unit": "шт.",
+          "currency": "RUB",
+          "entry_price": 145,
+          "mark_price": 150,
+          "multiplier": 1,
+          "unrealized_pnl": 1000,
+          "pnl_source": "profitLoss брокера",
+          "margin_used": null,
+          "liquidation_price": null,
+          "leverage": null
+        }
+      ],
+      "source": "Учебные цены и позиции — не данные брокерского счёта",
+      "source_url": "https://alfabank.ru/make-money/investments/pro-terminal/mcp/",
+      "coverage": {
+        "included": 3,
+        "excluded": []
+      },
+      "notes": [
+        "Счёт не подключён. Условные числа нужны, чтобы повторить упражнение без брокера.",
+        "Баланс currentBalance уже включает позиции: деньги и стоимость бумаг повторно не прибавляются.",
+        "Группа: Papers",
+        "Плечо и цена ликвидации акций не выдумываются; маржинальные требования показываются на уровне счёта."
+      ]
+    }
+  ]
+}
