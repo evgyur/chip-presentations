@@ -6,7 +6,7 @@
   "prompt_count": 24,
   "files": {
     "index.html": "3aaa40f4f7fd71b19ab29d7cf9d9c659a062c01674d9c602a7369e563dd6e580",
-    "slides.html": "5bc9e1419904c32c5bfb29d23897996421eeedb4eb88292e22b89fc703ec28b2",
+    "slides.html": "c498efe1f63c42458f063a39ac6bf2746efb74abc856db658f51577aee082b34",
     "dashboard.html": "c2488087439d61a04a2e0b1045125730f41aa540a777c5110e71087dd3270883",
     "sample-portfolio.json": "173decb8b3e7b7288a334a37e2bfa0b111334c2315dc6c49cbd1c37c85371854",
     "perps-dashboard-skill.zip": "6bab452bf9da85aa662b72c7075faff24ac6e70705083c202ca7d6136d6b3f3b",
@@ -17,7 +17,7 @@
     "wallet-source.json": "e307d26878d389b0f85834df220cb6fb96e8f19ba7ad4cf1c1c4bdac591405bd",
     "exercises.json": "9002bd4ad62ea13859928425c510e9b5073e25d3174d161fd1c065e7f8267502",
     "prompts.md": "8ddd80367f5dd988aa1899e4e8661051f437324abca15651c53ea270c987ee59",
-    "workshop.pdf": "74280eced080478119d6bf9af74d8bb76688f900088744e21aa3981a7fc8bd9d",
+    "workshop.pdf": "7cbf3b9c18c6875b6ea03b57c697fbee57e079ac0ec84f6ab5f8b4b2cd8317a6",
     "combined-demo.json": "21933619eda5d32da0384762f8f77616f3a18feb6ea74a5a6cc1df6df0db5f1f"
   },
   "exercise_count": 21,
